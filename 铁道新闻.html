@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 添加 viewport 以支持响应式 -->
+    <title>鉄道系ニュース入口</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0; /* 重置默认 margin */
+            padding: 0; /* 重置默认 padding */
+            text-align: center; /* 使 h1 居中 */
+        }
+        h1 {
+            font-size: 24px;
+            padding-top: 20px;
+            /* text-align: center; 已由 body 继承 */
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            padding: 0 20px; /* 添加一些内边距，防止内容贴边 */
+            box-sizing: border-box; /* 确保 padding 不会增加容器总宽度 */
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center; /* 按钮在列内居中 */
+        }
+        .bottom-row {
+            margin-top: 40px;
+            margin-bottom: 40px; /* 底部也添加一些边距 */
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 0 20px; /* 同样添加内边距 */
+            box-sizing: border-box;
+        }
+
+        /* 通用按钮样式 */
+        .railway-link {
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            width: 200px;
+            display: inline-block;
+            box-sizing: border-box; /* 确保 padding 和 border 包含在 width 内 */
+            transition: opacity 0.2s ease; /* 添加悬停效果 */
+        }
+        .railway-link:hover,
+        .railway-link:focus { /* 添加焦点样式以提高可访问性 */
+            opacity: 0.9;
+            text-decoration: underline; /* 添加下划线作为辅助反馈 */
+        }
+
+        /* JR 集团按钮颜色 */
+        .jr-hokkaido { background-color: #1E8449; }
+        .jr-east { background-color: #007A33; }
+        .jr-central { background-color: #F57C00; }
+        .jr-west { background-color: #0078C1; } /* JR西日本 */
+        .jr-shikoku { background-color: #1F618D; }
+        .jr-kyushu { background-color: #C0392B; }
+
+        /* 私铁集团按钮颜色 */
+        .kintetsu { background-color: #E60012; }
+        .keihan { background-color: #007749; }
+        .nankai { background-color: #F5821F; }
+        .meitetsu { background-color: #E60012; }
+        .tobu { background-color: #1D2088; }
+        .odakyu { background-color: #0079C2; }
+        .tokyo-metro { background-color: #009BBF; }
+        .keio { background-color: #9B64B0; }
+        .tokyu { background-color: #0079C1; }
+        .keikyu { background-color: #E60012; }
+        .sotetsu { background-color: #1C4473; }
+        .hankyu { background-color: #73264D; }
+        .hanshin { background-color: #0067C0; }
+        .nishitetsu { background-color: #0095D9; }
+        .seibu { background-color: #004098; }
+        .keisei { background-color: #005BAC; }
+
+        /* 其他新闻网站按钮颜色 */
+        .tetsudo-com { background-color: #884EA0; }
+        .railf { background-color: #A93226; }
+        .traffic-news { background-color: #34495E; }
+        .raillab { background-color: #566573; }
+
+    </style>
+</head>
+<body>
+
+    <h1>🧭 点击按钮打开以下鉄道新闻网站</h1>
+
+    <main>
+        <section class="container">
+            <nav class="column jr-group" aria-label="JR集团新闻">
+                <a class="railway-link jr-hokkaido" href="https://www.jrhokkaido.co.jp/CM/Info/press/presstop.html">JR北海道新闻</a>
+                <a class="railway-link jr-east" href="https://www.jreast.co.jp/press/">JR東日本新闻</a>
+                <a class="railway-link jr-central" href="https://jr-central.co.jp/news/">JR東海新闻</a>
+                <a class="railway-link jr-west" href="https://www.westjr.co.jp/press/">JR西日本新闻</a>
+                <a class="railway-link jr-shikoku" href="https://www.jr-shikoku.co.jp/03_news/press/">JR四国新闻</a>
+                <a class="railway-link jr-kyushu" href="https://www.jrkyushu.co.jp/news/index.html">JR九州新闻</a>
+            </nav>
+
+            <nav class="column private-group" aria-label="私铁新闻 1">
+                <a class="railway-link kintetsu" href="https://www.kintetsu.co.jp/all_news/whatsnew.html">近畿日本鉄道</a>
+                <a class="railway-link keihan" href="https://www.keihan.co.jp/corporate/info/release/2025/">京阪電鉄</a>
+                <a class="railway-link nankai" href="https://www.nankai.co.jp/company/news.html">南海電鉄</a>
+                <a class="railway-link meitetsu" href="https://www.meitetsu.co.jp/profile/news/index.html">名古屋鉄道</a>
+                <a class="railway-link tobu" href="https://www.tobu.co.jp/newsrelease/">東武鉄道</a>
+                <a class="railway-link odakyu" href="https://www.odakyu.jp/company/about/news/">小田急電鉄</a>
+                <a class="railway-link tokyo-metro" href="https://www.tokyometro.jp/news/2025/index.html">東京メトロ</a>
+                <a class="railway-link keio" href="https://www.keio.co.jp/news/update/news_release/news_all.html">京王電鉄</a>
+            </nav>
+
+            <nav class="column private-group" aria-label="私铁新闻 2">
+                <a class="railway-link tokyu" href="https://www.tokyu.co.jp/company/news/">東急電鉄</a>
+                <a class="railway-link keikyu" href="https://www.keikyu.co.jp/company/news/">京浜急行電鉄</a>
+                <a class="railway-link sotetsu" href="https://www.sotetsu.co.jp/pressrelease/train/">相模鉄道</a>
+                <a class="railway-link hankyu" href="https://www.hankyu.co.jp/company/news/index.html">阪急電鉄</a>
+                <a class="railway-link hanshin" href="https://www.hanshin.co.jp/press/">阪神電鉄</a>
+                <a class="railway-link nishitetsu" href="https://www.nishitetsu.co.jp/ja/news.html">西日本鉄道</a>
+                <a class="railway-link seibu" href="https://www.seiburailway.jp/newsroom">西武鉄道</a>
+                <a class="railway-link keisei" href="https://www.keisei.co.jp/news/">京成電鉄</a>
+            </nav>
+        </section>
+
+        <nav class="bottom-row news-sites" aria-label="综合铁路新闻网站">
+            <a class="railway-link tetsudo-com" href="https://www.tetsudo.com/">鉄道コム</a>
+            <a class="railway-link railf" href="https://railf.jp/news/">Railf.jp</a>
+            <a class="railway-link traffic-news" href="https://trafficnews.jp/category/railway">乗りものニュース</a>
+            <a class="railway-link raillab" href="https://raillab.jp/news">RailLab ニュース</a>
+        </nav>
+    </main>
+
+</body>
+</html>
